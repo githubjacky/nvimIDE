@@ -16,7 +16,8 @@ toggleterm.setup({
 	persist_size = true,
 	direction = "float",
 	close_on_exit = true,
-	shell = "C:\\Users\\opott\\scoop\\shims\\nu.EXE",
+    -- shell = "C:\\Users\\opott\\scoop\\shims\\nu.EXE",
+	shell = "/usr/bin/zsh",
 	float_opts = {
 		border = "curved",
 		winblend = 0,

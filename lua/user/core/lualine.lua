@@ -29,16 +29,67 @@ local diff = {
 
 local mode = {
 	"mode",
-	fmt = function(str)
-		return "-- " .. str .. " --"
+	fmt = function()
+		return " "
 	end,
+    colored = true,
+    padding = 0
 }
 
-local filetype = {
-	"filetype",
-	icons_enabled = true,
-	icon = nil,
+local treesitter = {
+    function()
+      local b = vim.api.nvim_get_current_buf()
+      if next(vim.treesitter.highlighter.active[b]) then
+        return ""
+      end
+      return ""
+    end,
+    color = { fg = "#98be65" },
+    cond = hide_in_width,
 }
+
+local lsp = {
+    function(msg)
+      msg = msg or "LS Inactive"
+      local buf_clients = vim.lsp.buf_get_clients()
+      if next(buf_clients) == nil then
+        -- TODO: clean up this if statement
+        if type(msg) == "boolean" or #msg == 0 then
+          return "LS Inactive"
+        end
+        return msg
+      end
+      local buf_ft = vim.bo.filetype
+      local buf_client_names = {}
+
+      -- add client
+      for _, client in pairs(buf_clients) do
+        if client.name ~= "null-ls" then
+          table.insert(buf_client_names, client.name)
+        end
+      end
+
+      -- add formatter
+      local formatters = require "lvim.lsp.null-ls.formatters"
+      local supported_formatters = formatters.list_registered(buf_ft)
+      vim.list_extend(buf_client_names, supported_formatters)
+
+      -- add linter
+      local linters = require "lvim.lsp.null-ls.linters"
+      local supported_linters = linters.list_registered(buf_ft)
+      vim.list_extend(buf_client_names, supported_linters)
+
+      return "[" .. table.concat(buf_client_names, ", ") .. "]"
+    end,
+    color = { gui = "bold" },
+    cond = hide_in_width,
+ }
+
+-- local filetype = {
+-- 	"filetype",
+-- 	icons_enabled = true,
+-- 	icon = nil,
+-- }
 
 local branch = {
 	"branch",
@@ -46,10 +97,10 @@ local branch = {
 	icon = "",
 }
 
-local location = {
-	"location",
-	padding = 0,
-}
+-- local location = {
+-- 	"location",
+-- 	padding = 0,
+-- }
 
 -- cool function for progress
 local progress = function()
@@ -75,11 +126,11 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { diagnostics },
-		lualine_b = { branch },
+		lualine_a = { mode },
+		lualine_b = { branch,diff },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, filetype },
+		lualine_x = { treesitter,lsp,diagnostics },
 		lualine_y = {},
 		lualine_z = { progress },
 	},
