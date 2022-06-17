@@ -79,7 +79,7 @@ return packer.startup(function(use)
     use "L3MON4D3/LuaSnip" --snippet engine
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-    -- telescope, treesitter, nvimtree
+    -- telescope, nvimtree
     use "nvim-telescope/telescope.nvim"
     use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
@@ -88,6 +88,7 @@ return packer.startup(function(use)
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- other useful tools
     use "windwp/nvim-autopairs"
@@ -98,7 +99,6 @@ return packer.startup(function(use)
     use "akinsho/toggleterm.nvim"
     use "folke/which-key.nvim"
     use "rcarriga/nvim-notify"
-    use "lukas-reineke/indent-blankline.nvim"
     use 'lewis6991/impatient.nvim'
 
     -- language specific plugin
