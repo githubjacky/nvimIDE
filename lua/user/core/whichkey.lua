@@ -53,7 +53,7 @@ local setup = {
     layout = {
         height = { min = 4, max = 25 }, -- min and max height of the columns
         width = { min = 20, max = 50 }, -- min and max width of the columns
-        spacing = 3, -- spacing between columns
+        spacing = 10, -- spacing between columns
         align = "left", -- align columns left, center or right
     },
     ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
@@ -82,7 +82,7 @@ local opts = {
 local mappings = {
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>lua require('user.utils').smart_quit()<CR>", "Quit" },
-    --["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
+    ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     ["c"] = { "<cmd>Bdelete<CR>", "Close Buffer" },
     ["f"] = { "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Find File" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -111,10 +111,10 @@ local mappings = {
             "Undo Stage Hunk",
         },
         o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+        b = { "<cmd>lua require'telescope.builtin'.git_branches(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Checkout Branch" },
+        c = { "<cmd>lua require'telescope.builtin'.git_commits(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Checkout Commit" },
         d = {
-            "<cmd>Gitsigns diffthis HEAD<cr>",
+            "<cmd>Gitsigns diffthis main<cr>",
             "Diff",
         },
     },
@@ -152,13 +152,11 @@ local mappings = {
     },
     s = {
         name = "Search",
-        n = { "<cmd>lua require'telescope.builtin'.notify(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "notify" },
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        R = { "<cmd>Telescope registers<cr>", "Registers" },
+        c = { "<cmd>lua require'telescope.builtin'.colorscheme(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Colorscheme" },
+        h = { "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Find Help" },
+        m = { "<cmd>lua require'telescope.builtin'.man_pages(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Main Pages" },
+        o = { "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Open Recent Files" },
+        r = { "<cmd>lua require'telescope.builtin'.registers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
     },
