@@ -1,5 +1,6 @@
 require "user.basic.impatient"
 require "user.basic.autopairs"
+require "user.basic.project"
 require "user.basic.cmp"
 require "user.basic.colorscheme"
 require "user.basic.comment"

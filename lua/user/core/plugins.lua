@@ -100,6 +100,7 @@ return packer.startup(function(use)
     use "folke/which-key.nvim"
     use "rcarriga/nvim-notify"
     use 'lewis6991/impatient.nvim'
+    use 'ahmedkhalf/project.nvim'
 
     -- language specific plugin
 

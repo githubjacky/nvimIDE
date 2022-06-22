@@ -87,6 +87,7 @@ local mappings = {
     ["f"] = { "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Find File" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    ["j"] = { "<cmd>lua _JULIA_TOGGLE()<cr>", "Julia Repl"},
     p = {
         name = "Packer",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -122,14 +123,7 @@ local mappings = {
     l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-        d = {
-            "<cmd>Telescope lsp_document_diagnostics<cr>",
-            "Document Diagnostics",
-        },
-        w = {
-            "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-            "Workspace Diagnostics",
-        },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         f = { "<cmd>lua vim.lsp.buf.format({ async = true})<cr>", "Format" },
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -143,7 +137,6 @@ local mappings = {
         },
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
         q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -156,9 +149,12 @@ local mappings = {
         h = { "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Find Help" },
         m = { "<cmd>lua require'telescope.builtin'.man_pages(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Main Pages" },
         o = { "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Open Recent Files" },
-        r = { "<cmd>lua require'telescope.builtin'.registers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Registers" },
+        R = { "<cmd>lua require'telescope.builtin'.registers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
+        n = { "<cmd>Telescope notify theme=dropdown<cr>", "Notify"},
+        r = { "<cmd>Telescope projects<cr>", "Project Jumper"},
+        d = { "<cmd>lua require'telescope.builtin'.diagnostics(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Document Diagnostic"},
     },
 }
 

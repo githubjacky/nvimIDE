@@ -12,7 +12,8 @@ if not _ok then
 end
 
 
--- telescope.load_extension("notify")
+telescope.load_extension("notify")
+--telescope.load_extension('project')
 
 
 telescope.setup {
@@ -95,9 +96,6 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
-    find_files = {
-        theme = "dropdown",
-    },
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -105,9 +103,10 @@ telescope.setup {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-    notify = {
-        layout_config = "vertical",
-        prompt_position = "top",
+    project = {
+        base_dirs = "~/repo",
+        hidden_files = false,
+        theme = "dropdown",
     },
   },
 }
