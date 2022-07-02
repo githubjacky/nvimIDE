@@ -36,6 +36,11 @@ map("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opt)
 map("n", "<Leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opt)
 map("n", "<C-t>", "<cmd>Telescope live_grep<cr>", opt)
 
+-- Stay in indent mode
+map("n", "<", "a<C-d><Esc>", opt)
+map("n", ">", "a<C-t><Esc>", opt)
+
+
 -- insert mode
 map("i", "jk", "<Esc>", opt)
 
@@ -55,7 +60,6 @@ map("v", "p", '"_dP', opt)
 -- visual block mode
 map("x", "<A-j>", ":move '>+1<CR>gv-gv", opt)
 map("x", "<A-k>", ":move '<-2<CR>gv-gv", opt)
-
 
 -- terminal mode
 map("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opt)
