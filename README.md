@@ -6,6 +6,7 @@
 ![screen shot](./picture/01.png)
 
 ## more information
+*to see the plugins I use, please check my personal website*
 ### [reference](https://opottghjk00.github.io/content/NvimIDE/index.html)
 
 ## special thanks

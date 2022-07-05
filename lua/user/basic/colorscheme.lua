@@ -3,7 +3,8 @@
 --use "folke/tokyonight.nvim"
 --use "LunarVim/darkplus.nvim"
 
-local colorscheme = "onedark"
+-- local colorscheme = "onedark"
+local colorscheme = "tokyonight"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
