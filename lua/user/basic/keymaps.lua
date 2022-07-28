@@ -21,8 +21,8 @@ map("n", "<C-l>", "<C-w>l", opt)
 -- Resize with arrows
 map("n", "<C-Up>", ":resize -2<CR>", opt)
 map("n", "<C-Down>", ":resize +2<CR>", opt)
-map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
-map("n", "<C-Right>", ":vertical resize +2<CR>", opt)
+map("n", "<C-Left>", ":vertical resize +2<CR>", opt)
+map("n", "<C-Right>", ":vertical resize -2<CR>", opt)
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>", opt)

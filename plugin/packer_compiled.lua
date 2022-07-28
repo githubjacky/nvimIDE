@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/jacky/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/jacky/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/LunarVim/darkplus.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/jacky/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -238,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jacky/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/jacky/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,

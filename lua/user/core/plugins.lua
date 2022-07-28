@@ -54,7 +54,7 @@ return packer.startup(function(use)
     -- colorscheme
     use "navarasu/onedark.nvim"
     use "folke/tokyonight.nvim"
-    use "LunarVim/darkplus.nvim"
+    use 'Mofiqul/vscode.nvim'
 
 
     -- some IDE stuff

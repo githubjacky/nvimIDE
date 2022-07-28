@@ -4,7 +4,8 @@
 --use "LunarVim/darkplus.nvim"
 
 -- local colorscheme = "onedark"
-local colorscheme = "tokyonight"
+-- local colorscheme = "tokyonight"
+local colorscheme = "vscode"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
