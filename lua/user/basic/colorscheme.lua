@@ -31,3 +31,4 @@ else
 end
 
 vim.g.tokyonight_style = "night"
+
