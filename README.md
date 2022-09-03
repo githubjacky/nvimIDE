@@ -5,7 +5,7 @@
 ## screenshot
 ![screen shot](./picture/01.png)
 
-## reference information
+## reference
 *to see the plugins I use, please check my personal website*
 - [more information](https://githubjacky.github.io/content/NvimIDE/index.html)
 
