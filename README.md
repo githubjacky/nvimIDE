@@ -5,9 +5,9 @@
 ## screenshot
 ![screen shot](./picture/01.png)
 
-## more information
+## reference information
 *to see the plugins I use, please check my personal website*
-### [reference](https://opottghjk00.github.io/content/NvimIDE/index.html)
+- [more information](https://githubjacky.github.io/content/NvimIDE/index.html)
 
 ## special thanks
 *can't configure without this guy and his neovim progect - LunarVim*
